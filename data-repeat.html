@@ -1,0 +1,19 @@
+<!DOCTYPE html>
+<html ng-app>
+<head>
+<title>
+</title>
+</head>
+<body ng-init="names=['ronaldo', 'van parsie', 'messi', 'silva']">
+	<div class="container">
+		Name: <input type="text" ng-model="name" /> {{ name }}
+	</div>
+	<ul>
+		<li ng-repeat="player in names">
+			{{ player }}
+		</li>
+	</ul>
+
+	<script type="text/javascript" src="js/angular.min.js"></script>
+</body>
+</html>

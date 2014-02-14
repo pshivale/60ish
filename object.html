@@ -1,0 +1,19 @@
+<!DOCTYPE html>
+<html ng-app>
+<head>
+<title>
+</title>
+</head>
+<body ng-init="players=[{name: 'Ronaldo', club: 'Real Madrid', weekly: '1000'},	{name: 'Van parsie', club: 'Manchester United', weekly: '900'},	{name: 'Messi', club: 'Barcelona', weekly: '1010'},	{name: 'Silva', club: 'Manchester City', weekly: '850'}]">
+	<div class="container">
+		Name: <input type="text" ng-model="name" />
+	</div>
+	<ul>
+		<li ng-repeat="player in players | filter: name | orderBy:'club'">
+			{{ player.name | uppercase}} - {{ player.club | lowercase}} - {{ player.weekly | currency }}
+		</li>
+	</ul>
+
+	<script type="text/javascript" src="js/angular.min.js"></script>
+</body>
+</html>
