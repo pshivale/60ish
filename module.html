@@ -1,0 +1,23 @@
+<!DOCTYPE html>
+<html ng-app="demoApp">
+<head>
+<title>
+</title>
+</head>
+<body>
+	
+	<h2>Adding a Simple Controller</h2>
+	<div ng-controller="SimpleController">
+		Name: <input type="text" ng-model="name" /> {{ name }}
+		<ul>
+			<li ng-repeat="player in players | filter: name | orderBy:'club'">
+				{{ player.name | uppercase}} - {{ player.club | lowercase}} - {{ player.weekly | currency }}
+			</li>
+		</ul>
+	</div>
+
+	<script type="text/javascript" src="js/angular.min.js"></script>
+	<script type="text/javascript" src="js/module.js"></script>
+	
+</body>
+</html>
