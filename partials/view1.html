@@ -1,9 +1,9 @@
 <h2>View 1</h2>
 <div class="container">
-	Name: <input type="text" ng-model="name" /> {{ name }}
+	Name: <input type="text" ng-model="name" />
 </div>
 <ul>
-	<li ng-repeat="player in players">
+	<li ng-repeat="player in players | filter: name | orderBy: 'name'">
 		{{ player.name }} - {{ player.club }} - {{ player.weekly }}
 	</li>
 </ul>
@@ -12,6 +12,6 @@ New Player<br/>
 Name: <input type="text" ng-model="newPlayer.name"/><br/>
 City: <input type="text" ng-model="newPlayer.club"/><br/>
 Weekly: <input type="text" ng-model="newPlayer.weekly"/><br/>
-<button ng-click="addPlayer()">Add Player</button>
+<button ng-click="addPlayer();">Add Player</button>
 
 <a href="#/view2">View 2</a>

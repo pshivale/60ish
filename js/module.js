@@ -31,15 +31,16 @@ demoApp.factory('simpleFactory', function(){
 	factory.postPlayer = function(player){
 
 	};
+	return factory;
 });
 
-demoApp.controller('SimpleController', [ '$scope', 'simpleFactory' , function($scope, simpleFactory){
+demoApp.controller('SimpleController', function($scope, simpleFactory){
 	$scope.players = [];
 	
 	init();
 
 	function init(){
-		players = simpleFactory.getPlayers();
+		$scope.players = simpleFactory.getPlayers();
 	}
 	
 	$scope.addPlayer = function(){
@@ -50,4 +51,4 @@ demoApp.controller('SimpleController', [ '$scope', 'simpleFactory' , function($s
 				weekly: $scope.newPlayer.weekly
 			});
 	}
-}]);
+});
